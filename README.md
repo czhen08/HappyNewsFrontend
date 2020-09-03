@@ -12,57 +12,112 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
+App.js - 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.	Because the React project folder is over 500MB so I don’t upload the whole project, to run the web interface please first start a new React project and then replace the src folder with the given one in code/web-interface.
 
-### `yarn build`
+2.	Please also install the React Ant design library, the command is:
+### `npm install antd`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+and then run:
+### `npm start
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+3.	The code for the web interface is in the App.js file, which is located in src/App.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+Important Information
+================
+In this section, point out any important information that is valuable for the evaluator to know before evaluating this submission
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Before running the code, make sure all the missing supplementary files are added to the specified location.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run the code, please make sure you are in the main directory (18065476_IRDM).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Provided supplementary files
+===================
+In this section, define the filename of different files that are included in this submission followed by a description of the information in the file.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Q1/Q1_term_frequency.csv : A CSV file that shows Zipf's law's parameters for top 1000 frequency terms in the collection. 
+The parameters include the term, itsfrequency, its rank, the probability of term occurrence(Pr), and the multiplication of the rank of the term and the its probability (r*Pr).
 
-## Learn More
+Q1/Figure_tf_100_terms.png: A PNG file that plots the curve for top 100 frequency terms
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Q1/Figure_tf_1000_terms.png: A PNG file that plots the curve for top 1000 frequency terms
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Q1/Figure_tf_1all_terms.png: A PNG file that plots the curve for all terms in the colloection
 
-### Code Splitting
+Q1/Figure_zipf_parameters1.png: A screenshot of Q1_term_frequency.csv
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Q1/Figure_zipf_parameters2.png: A screenshot of Q1_term_frequency.csv
 
-### Analyzing the Bundle Size
+Q2/Q2_vector_space.csv: A CSV file that contains the retrieval results of subtask 2
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Q3/Q3_unigram.csv: A CSV file that contains the retrieval results of query-likelihood unigram language model
 
-### Making a Progressive Web App
+Q3/Q3_laplace.csv: A CSV file that contains the retrieval results of Laplace Smoothing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Q3/Q3_jelinek_mercer.csv: A CSV file that contains the retrieval results of Jelinek-Mercer Smoothing
 
-### Advanced Configuration
+Q3/Q3_dirichlet.csv: A CSV file that contains the retrieval results of Dirichlet Smoothing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Q4/Figure_learning_rate_0.01.png : A PNG file that plots the change of the model training loss over the 1000 iterations under learning rate 0.01
 
-### Deployment
+Q4/Figure_learning_rate_0.05.png : A PNG file that plots the change of the model training loss over the 1000 iterations under learning rate 0.05
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Q4/Figure_learning_rate_0.5.png : A PNG file that plots the change of the model training loss over the 1000 iterations under learning rate 0.5
 
-### `yarn build` fails to minify
+Q4/Figure_learning_rate_0.9.png : A PNG file that plots the change of the model training loss over the 1000 iterations under learning rate 0.9
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Q8/Prediction_results.jsonl : A jsonl file that contains my final model’s prediction
+
+
+Missing supplementary files
+===========================
+In this section, define and describe the additional/ auxilliary files that are not provided with the submission due to size constraints etc... with the reason
+
+1) wiki-pages folder, the folder unzipped from wiki-pages.zip, should be put in the main directory (18065476_IRDM) before running the code, not provided due to size constraints
+
+2) train.jsonl, should be put in the main directory (18065476_IRDM) before running the code, not provided due to size constraints
+
+3) shared_task_dev.jsonl, should be put in the main directory (18065476_IRDM) before running the code, not provided due to size constraints
+
+Code files
+==========
+In this section, define the source code files that are included in this submission with a description of the files 
+
+Q1/Q1.py ： Code file for Q1
+
+Q2/Q2.py ： Code file for Q2
+
+Q3/Q3_unigram.py ： Code file for Q3 query-likelihood unigram language model
+
+Q3/Q3_laplace.py ： Code file for Q3 Laplace Smoothing
+
+Q3/Q3_jelinek_mercer.py ： Code file for Q3 Jelinek-Mercer Smoothing
+
+Q3/Q3_dirichlet.py ： Code file for Q3 Dirichlet Smoothing
+
+Q4/Q4.py ： Code file for Q4
+
+Q5/Q5.py ： Code file for Q5
+
+Q6/Q6.py ： Code file for Q6
+
+Q8/Q8.py ： Code file for Q8
+
+
+Running the code
+================
+In this section, define the important code files that are entry points to the code and describe how to run the code to reproduce results.
+
+Before running the code, make sure all the missing supplementary files are added to the specified location.
+
+To run the code, please make sure you are in the main directory (18065476_IRDM).
+
+Also make sure you have installed TensorFlow, keras, gensim, matplotlib and numpy.
+
+I use Anaconda Prompt to run the code, first go to the right directory which is 18065476_IRDM, 
+
+then run "ipyhton" command to open IPython and copy the code to ipyhton to run the code.
+
+Note that the running time for Q2 and Q3 is above one and half hour, for other questions the situation is similar.
