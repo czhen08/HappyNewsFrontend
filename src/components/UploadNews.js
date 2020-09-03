@@ -2,9 +2,8 @@ import React from 'react';
 import './News.css';
 import "antd/dist/antd.css";
 import IMG from './news.png'
-import { Layout, Typography, Col, Row, Button, Input, Space, List, Select } from 'antd';
+import { Layout, Typography, Col, Row, Button, Input } from 'antd';
 
-const { Option } = Select;
 const { Header, Content, Footer } = Layout;
 const { TextArea } = Input;
 const { Title } = Typography;
@@ -20,15 +19,12 @@ class UploadNews extends React.Component {
 
   predictSentiment(news,index){
     var posInput = document.getElementById("positiveInput"+index);
-    // var negInput = document.getElementById("negativeInput"+index);    
     fetch(backendUrl+news)
     .then(res => res.json())
     .then((data) => { 
       this.setState({ posDict: data })
       this.posDict[index] = data['response']['positive'];
-      // this.negDict[index] = data['response']['negative'];
       posInput.value = this.posDict[index];
-      // negInput.value = this.negDict[index];
     })
     .catch(console.log);
   }

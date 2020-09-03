@@ -22,7 +22,6 @@ class PredictNews extends React.Component {
     this.state = { articles: [], _isMounted: false, outlet: "BBC" };
     this.fetchNews = this.fetchNews.bind(this);
     this.posDict = {};
-    // this.negDict = {};
   }
 
   componentDidMount() {
@@ -40,15 +39,12 @@ class PredictNews extends React.Component {
 
   predictSentiment(news,index){
     var posInput = document.getElementById("positiveInput"+index);
-    // var negInput = document.getElementById("negativeInput"+index);    
     fetch(backendUrl+news)
     .then(res => res.json())
     .then((data) => { 
       this.setState({ posDict: data })
       this.posDict[index] = data['response']['positive'];
-      // this.negDict[index] = data['response']['negative'];
       posInput.value = this.posDict[index];
-      // negInput.value = this.negDict[index];
     })
     .catch(console.log);
   }
@@ -104,7 +100,6 @@ class PredictNews extends React.Component {
             <List.Item>
               <Row gutter={[16, 16]} style={{height: 180, border: '2px solid #A9A9A9'}}>
               <Col span={6}>
-                {/* <img style={{maxWidth: '100%', maxHeight: '95%'}} alt="img" src={item.metadata.meta_img || IMG} /> */}
                 <a href={item.url} >
                     <img style={{ maxWidth: '100%', maxHeight: '95%' }} alt="img" src={item.image_url || IMG} />
                 </a>
@@ -121,13 +116,8 @@ class PredictNews extends React.Component {
               <Space direction="vertical">
               <Row><Button type="primary" id="predict" onClick={()=> this.predictSentiment(item.content, index)}>Predict</Button></Row>
               <Row>
-                {/* <Input style={{ width: '60%' }} id={"positiveInput"+index} value={this.posDict[index]}/>  */}
                 <TextArea className="news-content" rows={4} id={"positiveInput"+index} value={this.posDict[index]} style={{ resize:'none', overflow: 'overlay' }}/>
               </Row>
-              {/* <Row>
-                <Input style={{ width: '40%' }} defaultValue="Negative" />
-                <Input style={{ width: '60%' }} className="sentiScore" id={"negativeInput"+index} value={this.negDict[index]}/> 
-              </Row> */}
               </Space>
             </Col>
             </Row>

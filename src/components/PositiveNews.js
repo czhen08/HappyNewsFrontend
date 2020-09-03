@@ -9,7 +9,6 @@ const { Header, Content, Footer } = Layout;
 const { TextArea } = Input;
 const { Title } = Typography;
 const { Meta } = Card;
-const backendUrl = "http://127.0.0.1:5000/predict?sentence=";
 
 export async function getNews(outlet) {
   let result = await fetch("http://127.0.0.1:5000/positive-news?outlet=" + outlet).then(response => response.json());
