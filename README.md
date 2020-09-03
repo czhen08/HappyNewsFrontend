@@ -36,5 +36,5 @@ To run the code, please make sure you are in the main directory. Then run the fo
 
 ### `yarn start` 
 or 
-### `npm start
+### `npm start`
 
